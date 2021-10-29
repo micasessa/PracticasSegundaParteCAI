@@ -21,5 +21,15 @@ namespace Prueba1.WinForms
         {
 
         }
+
+        private void _bttnEnter_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(this._txtBxNombre.Text);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
