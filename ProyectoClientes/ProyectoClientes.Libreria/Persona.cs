@@ -24,5 +24,10 @@ namespace ProyectoClientes.Libreria
             _apellido = apellido;
             _tipoDocumento = tipoDoc;
         }
+        public Persona(string nombre, string apellido)
+        {
+            _nombre = nombre;
+            _apellido = apellido;
+        }
     }
 }
