@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyectoClientes.WinForms
 {
-    public partial class Form1 : Form
+    public partial class FrmListarCliente : Form
     {
-        public Form1()
+        public FrmListarCliente()
         {
             InitializeComponent();
         }
