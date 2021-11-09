@@ -29,5 +29,10 @@ namespace ProyectoClientes.Libreria
             _nombre = nombre;
             _apellido = apellido;
         }
+
+        public override string ToString()
+        {
+            return $"{this._nombre} {this._apellido}";
+        }
     }
 }

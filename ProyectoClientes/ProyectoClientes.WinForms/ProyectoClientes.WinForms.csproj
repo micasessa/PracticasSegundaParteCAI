@@ -78,11 +78,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmCliente.resx">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmListarCliente.resx">
       <DependentUpon>FrmListarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMaster.resx">
       <DependentUpon>FrmMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPersona.resx">
+      <DependentUpon>FrmPersona.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
