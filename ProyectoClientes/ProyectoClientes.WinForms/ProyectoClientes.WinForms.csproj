@@ -78,6 +78,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmListarCliente.resx">
+      <DependentUpon>FrmListarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMaster.resx">
+      <DependentUpon>FrmMaster.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -104,6 +110,10 @@
     <ProjectReference Include="..\ProyectoClientes.Libreria\ProyectoClientes.Libreria.csproj">
       <Project>{53c81a10-0a52-4bbd-8689-82b8005d161d}</Project>
       <Name>ProyectoClientes.Libreria</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProyectoClientes\ProyectoClientes.Consola.csproj">
+      <Project>{b458d78d-c02c-4f43-ba58-d4d58c03256e}</Project>
+      <Name>ProyectoClientes.Consola</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
