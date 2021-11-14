@@ -7,22 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ProyectoClientes.Libreria;
+using ProyectoClientes.Entidades;
+using ProyectoClientes.Negocio;
+using Newtonsoft.Json;
+
 
 
 namespace ProyectoClientes.WinForms
 {
     public partial class FrmListarCliente : Form
     {
-        private List<Cliente> _clientes;
+        private FrmAgregarCliente _frmAgregarCliente;
+        private ClienteServicio _clienteServicio;
 
         public FrmListarCliente(Form propietario)
         {
-            _clientes = new List<Cliente>();
-            _clientes.Add(new Cliente(1, 23337468552, "Carlos", "Perez", "Av.Callao 3333", "01139451829"));
+            _frmAgregarCliente = new FrmAgregarCliente;
+            _clienteServicio = new ClienteServicio;
 
-            this.Owner = propietario;
-            
+            this.Owner = propietario;          
             
             InitializeComponent();
         }

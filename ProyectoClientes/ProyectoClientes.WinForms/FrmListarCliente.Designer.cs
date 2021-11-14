@@ -37,7 +37,7 @@ namespace ProyectoClientes.WinForms
             // 
             // btnVolver_Click
             // 
-            this.btnVolver_Click.Location = new System.Drawing.Point(612, 45);
+            this.btnVolver_Click.Location = new System.Drawing.Point(611, 382);
             this.btnVolver_Click.Name = "btnVolver_Click";
             this.btnVolver_Click.Size = new System.Drawing.Size(124, 30);
             this.btnVolver_Click.TabIndex = 1;
@@ -77,7 +77,7 @@ namespace ProyectoClientes.WinForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(823, 514);
             this.Controls.Add(this._btnDetalle_Click);
             this.Controls.Add(this._lstClientes);
             this.Controls.Add(this.lblListaCliente);

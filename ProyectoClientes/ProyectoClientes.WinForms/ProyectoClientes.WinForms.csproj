@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,40 +49,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmAgregarCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FrmAgregarCliente.cs" />
     <Compile Include="FrmAgregarCliente.Designer.cs">
       <DependentUpon>FrmAgregarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmCliente.Designer.cs">
-      <DependentUpon>FrmCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmListarCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FrmListarCliente.cs" />
     <Compile Include="FrmListarCliente.Designer.cs">
       <DependentUpon>FrmListarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMaster.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FrmMaster.cs" />
     <Compile Include="FrmMaster.Designer.cs">
       <DependentUpon>FrmMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPersona.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FrmPersona.cs" />
     <Compile Include="FrmPersona.Designer.cs">
       <DependentUpon>FrmPersona.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmCliente.resx">
-      <DependentUpon>FrmCliente.cs</DependentUpon>
+    <EmbeddedResource Include="FrmAgregarCliente.resx">
+      <DependentUpon>FrmAgregarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListarCliente.resx">
       <DependentUpon>FrmListarCliente.cs</DependentUpon>
@@ -99,6 +88,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -113,9 +103,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProyectoClientes.Libreria\ProyectoClientes.Libreria.csproj">
-      <Project>{53c81a10-0a52-4bbd-8689-82b8005d161d}</Project>
-      <Name>ProyectoClientes.Libreria</Name>
+    <ProjectReference Include="..\ProyectoClientes.Entidades\ProyectoClientes.Entidades.csproj">
+      <Project>{4a130e2f-c174-4065-8251-4a9f6bbed273}</Project>
+      <Name>ProyectoClientes.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProyectoClientes.Negocio\ProyectoClientes.Negocio.csproj">
+      <Project>{d2384e7a-590c-40b7-860f-fa2555e997ac}</Project>
+      <Name>ProyectoClientes.Negocio</Name>
     </ProjectReference>
     <ProjectReference Include="..\ProyectoClientes\ProyectoClientes.Consola.csproj">
       <Project>{b458d78d-c02c-4f43-ba58-d4d58c03256e}</Project>

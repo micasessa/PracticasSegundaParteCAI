@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ProyectoClientes.Libreria;
+using ProyectoClientes.Entidades;
+using ProyectoClientes.Negocio;
+using Newtonsoft.Json;
 
 namespace ProyectoClientes.WinForms
 {

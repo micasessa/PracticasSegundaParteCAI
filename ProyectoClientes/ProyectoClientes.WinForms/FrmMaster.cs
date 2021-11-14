@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProyectoClientes.Entidades;
+using ProyectoClientes.Negocio;
+using Newtonsoft.Json;
 
 namespace ProyectoClientes.WinForms
 {
@@ -14,11 +17,15 @@ namespace ProyectoClientes.WinForms
     {
         private FrmListarCliente _formListaCliente;
 
+
+        //atrib serializ.
+
         public FrmMaster()
         {
             //Instancio el atributo de listarCliente
             _formListaCliente = new FrmListarCliente(this);
             
+
             InitializeComponent();
         }
 
@@ -33,5 +40,22 @@ namespace ProyectoClientes.WinForms
                 MessageBox.Show(ex.Message);
             }
         }
+
+        // boton serializar/descer
+        private void _btnSerialDescer(object sender, EventArgs e)
+        {
+            try
+            {
+                _frmSerializar.Show();
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        
+
     }
 }
