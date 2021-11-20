@@ -11,8 +11,6 @@ using ProyectoClientes.Entidades;
 using ProyectoClientes.Negocio;
 using Newtonsoft.Json;
 
-
-
 namespace ProyectoClientes.WinForms
 {
     public partial class FrmListarCliente : Form
@@ -22,8 +20,8 @@ namespace ProyectoClientes.WinForms
 
         public FrmListarCliente(Form propietario)
         {
-            _frmAgregarCliente = new FrmAgregarCliente;
-            _clienteServicio = new ClienteServicio;
+            _frmAgregarCliente = new FrmAgregarCliente();
+            _clienteServicio = new ClienteServicio();
 
             this.Owner = propietario;          
             

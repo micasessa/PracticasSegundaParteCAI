@@ -16,7 +16,7 @@ namespace ProyectoClientes.WinForms
     public partial class FrmMaster : Form
     {
         private FrmListarCliente _formListaCliente;
-
+        private FrmSerializar _frmSerializar;
 
         //atrib serializ.
 

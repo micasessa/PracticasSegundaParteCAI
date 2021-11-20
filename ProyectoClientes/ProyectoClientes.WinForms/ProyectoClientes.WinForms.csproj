@@ -49,21 +49,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmAgregarCliente.cs" />
+    <Compile Include="FrmAgregarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmAgregarCliente.Designer.cs">
       <DependentUpon>FrmAgregarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmListarCliente.cs" />
+    <Compile Include="FrmListarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmListarCliente.Designer.cs">
       <DependentUpon>FrmListarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMaster.cs" />
+    <Compile Include="FrmMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmMaster.Designer.cs">
       <DependentUpon>FrmMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPersona.cs" />
+    <Compile Include="FrmPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmPersona.Designer.cs">
       <DependentUpon>FrmPersona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSerializar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSerializar.Designer.cs">
+      <DependentUpon>FrmSerializar.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,10 +124,6 @@
     <ProjectReference Include="..\ProyectoClientes.Negocio\ProyectoClientes.Negocio.csproj">
       <Project>{d2384e7a-590c-40b7-860f-fa2555e997ac}</Project>
       <Name>ProyectoClientes.Negocio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ProyectoClientes\ProyectoClientes.Consola.csproj">
-      <Project>{b458d78d-c02c-4f43-ba58-d4d58c03256e}</Project>
-      <Name>ProyectoClientes.Consola</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
