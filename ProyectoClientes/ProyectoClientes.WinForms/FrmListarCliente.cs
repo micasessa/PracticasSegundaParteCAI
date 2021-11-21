@@ -42,7 +42,7 @@ namespace ProyectoClientes.WinForms
         private void CargarListaCliente()
         {
             _lstClientes.DataSource = null;
-            _lstClientes.DataSource = this._clientes;
+            _lstClientes.DataSource = this._clienteServicio;
             _lstClientes.DisplayMember = "Mostrar";
             _lstClientes.ValueMember = "CUIT";
         }
