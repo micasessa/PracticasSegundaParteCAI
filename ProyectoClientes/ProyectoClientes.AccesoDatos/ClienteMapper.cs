@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +28,24 @@ namespace ProyectoClientes.AccesoDatos
 
         public void Agregar (Cliente cliente)
         {
+            NameValueCollection obj = ReverseMap(cliente);
+            string json = WebHelper.Post("cliente", obj);
+            TransactionResult lst = JsonConvert.DeserializeObject<TransactionResult>(json);
             _clientes.Add(cliente);
+        }
+
+        private NameValueCollection ReverseMap(Cliente cliente)
+        {
+            NameValueCollection cl = new NameValueCollection();
+            cl.Add("dni", cliente.Dni.ToString());
+            cl.Add("nombre", cliente.Nombre);
+            cl.Add("apellido", cliente.Apellido);
+            cl.Add("direccion", cliente.Direccion);
+            cl.Add("email", cliente.Email);
+            cl.Add("telefono", cliente.Telefono);
+            cl.Add("fechaNacimiento", cliente.FechaNac.ToString());
+            cl.Add("activo", cliente.Activo.ToString());
+            return cl;
         }
     }
 }

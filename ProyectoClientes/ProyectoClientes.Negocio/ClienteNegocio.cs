@@ -9,12 +9,12 @@ using ProyectoClientes.Negocio;
 
 namespace ProyectoClientes.Negocio
 {
-    public class ClienteServicio
+    public class ClienteNegocio
     {
         private ClienteMapper _clienteMapper;
 
         //Constructor
-        public ClienteServicio()
+        public ClienteNegocio()
         {
             _clienteMapper = new ClienteMapper();
         }
@@ -27,6 +27,7 @@ namespace ProyectoClientes.Negocio
 
         public void AddCliente (Cliente cliente)
         {
+             
             _clienteMapper.Agregar(cliente);
         }
         

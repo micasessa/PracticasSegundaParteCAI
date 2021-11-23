@@ -13,11 +13,12 @@ using Newtonsoft.Json;
 
 namespace ProyectoClientes.WinForms
 {
-    public partial class FrmAgregarCliente : Form
+    public partial class FrmCuentas : Form
     {
-        public FrmAgregarCliente()
+        public FrmCuentas(Form main)
         {
             InitializeComponent();
+            this.Owner = main;
         }
     }
 }

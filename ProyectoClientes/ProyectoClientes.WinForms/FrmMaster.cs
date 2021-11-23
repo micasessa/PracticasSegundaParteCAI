@@ -12,40 +12,37 @@ namespace ProyectoClientes.WinForms
 {
     public partial class FrmMaster : Form
     {
-        private FrmListarCliente _formListaCliente;
-        private FrmSerializar _frmSerializar;
 
         //atrib serializ.
 
         public FrmMaster()
         {
-            //Instancio el atributo de listarCliente
-            _formListaCliente = new FrmListarCliente(this);
-
 
             InitializeComponent();
         }
                 
 
-        // boton serializar/descer
-        private void _btnSerialDescer(object sender, EventArgs e)
+        private void _btnModuloCuentas_Click(object sender, EventArgs e)
         {
             try
             {
-                _frmSerializar.Show();
+                FrmCuentas cuen = new FrmCuentas(this);
+                cuen.Show();
                 this.Hide();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
-        private void btnListarCliente_Click_1(object sender, EventArgs e)
+        private void btnCliente_Click(object sender, EventArgs e)
         {
             try
             {
-                _formListaCliente.Show();
+                FrmCliente cli = new FrmCliente(this);
+                cli.Show();
                 this.Hide();
             }
             catch (Exception ex)

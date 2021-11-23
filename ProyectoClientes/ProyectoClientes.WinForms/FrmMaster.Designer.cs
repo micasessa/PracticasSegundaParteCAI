@@ -29,47 +29,48 @@ namespace ProyectoClientes.WinForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnListarCliente = new System.Windows.Forms.Button();
             this.btnSerialDescer = new System.Windows.Forms.Button();
-            this.btnAgregarCliente = new System.Windows.Forms.Button();
+            this.btnCliente = new System.Windows.Forms.Button();
+            this._btnModuloCuentas = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnListarCliente
-            // 
-            this.btnListarCliente.Location = new System.Drawing.Point(122, 64);
-            this.btnListarCliente.Name = "btnListarCliente";
-            this.btnListarCliente.Size = new System.Drawing.Size(337, 50);
-            this.btnListarCliente.TabIndex = 0;
-            this.btnListarCliente.Text = "Listar Cliente";
-            this.btnListarCliente.UseVisualStyleBackColor = true;
-            this.btnListarCliente.Click += new System.EventHandler(this.btnListarCliente_Click_1);
             // 
             // btnSerialDescer
             // 
-            this.btnSerialDescer.Location = new System.Drawing.Point(122, 230);
+            this.btnSerialDescer.Location = new System.Drawing.Point(122, 245);
             this.btnSerialDescer.Name = "btnSerialDescer";
             this.btnSerialDescer.Size = new System.Drawing.Size(337, 50);
             this.btnSerialDescer.TabIndex = 1;
             this.btnSerialDescer.Text = "Serializar/Descerializar";
             this.btnSerialDescer.UseVisualStyleBackColor = true;
             // 
-            // btnAgregarCliente
+            // btnCliente
             // 
-            this.btnAgregarCliente.Location = new System.Drawing.Point(122, 144);
-            this.btnAgregarCliente.Name = "btnAgregarCliente";
-            this.btnAgregarCliente.Size = new System.Drawing.Size(337, 50);
-            this.btnAgregarCliente.TabIndex = 3;
-            this.btnAgregarCliente.Text = "Agregar Cliente";
-            this.btnAgregarCliente.UseVisualStyleBackColor = true;
+            this.btnCliente.Location = new System.Drawing.Point(122, 65);
+            this.btnCliente.Name = "btnCliente";
+            this.btnCliente.Size = new System.Drawing.Size(337, 50);
+            this.btnCliente.TabIndex = 3;
+            this.btnCliente.Text = "Modulo Cliente";
+            this.btnCliente.UseVisualStyleBackColor = true;
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            // 
+            // _btnModuloCuentas
+            // 
+            this._btnModuloCuentas.Location = new System.Drawing.Point(122, 149);
+            this._btnModuloCuentas.Name = "_btnModuloCuentas";
+            this._btnModuloCuentas.Size = new System.Drawing.Size(333, 49);
+            this._btnModuloCuentas.TabIndex = 4;
+            this._btnModuloCuentas.Text = "Modulo Cuentas";
+            this._btnModuloCuentas.UseVisualStyleBackColor = true;
+            this._btnModuloCuentas.Click += new System.EventHandler(this._btnModuloCuentas_Click);
             // 
             // FrmMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 369);
-            this.Controls.Add(this.btnAgregarCliente);
+            this.ClientSize = new System.Drawing.Size(612, 395);
+            this.Controls.Add(this._btnModuloCuentas);
+            this.Controls.Add(this.btnCliente);
             this.Controls.Add(this.btnSerialDescer);
-            this.Controls.Add(this.btnListarCliente);
             this.Name = "FrmMaster";
             this.Text = "Master";
             this.ResumeLayout(false);
@@ -77,9 +78,8 @@ namespace ProyectoClientes.WinForms
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnListarCliente;
         private System.Windows.Forms.Button btnSerialDescer;
-        private System.Windows.Forms.Button btnAgregarCliente;
+        private System.Windows.Forms.Button btnCliente;
+        private System.Windows.Forms.Button _btnModuloCuentas;
     }
 }

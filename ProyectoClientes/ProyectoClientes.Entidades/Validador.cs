@@ -7,24 +7,7 @@ using System.Threading.Tasks;
 namespace ProyectoClientes.Entidades
 {
     public class Validador
-    {
-        public static int pedirMenu(string mensaje)
-        {
-            int opcMenu = 0;
-            do
-            {
-                Console.WriteLine(mensaje);
-                if (!int.TryParse(Console.ReadLine(), out opcMenu))
-                {
-                    opcMenu = -1;
-                }
-                if (opcMenu != 1 && opcMenu != 2 && opcMenu != 3 && opcMenu != 4 && opcMenu != 5)
-                {
-                    Console.WriteLine("Ingrese una opcion valida");
-                }
-            } while (opcMenu != 1 && opcMenu != 2 && opcMenu != 3 && opcMenu != 4 && opcMenu != 5);
-            return (opcMenu);
-        }
+    {        
         public static string pedirString(string mensaje)
         {
             string retorno = "";
@@ -103,6 +86,48 @@ namespace ProyectoClientes.Entidades
                 }
             } while (!valido);
             return (retorno);
+        }
+
+        public static string ValidarNumero(string input, string campoEsperado)
+        {
+            int nro;
+            string error = "";
+            if (!int.TryParse(input, out nro))
+            {
+                error = campoEsperado + " debe ser numérico" + "\n";
+            }
+            else if (nro < 0)
+            {
+                error = campoEsperado + " debe ser positivo" + "\n";
+            }
+            return error;
+        }
+        public static string ValidarString(string input, string campoEsperado)
+        {
+            string error = "";
+            if (input == "")
+            {
+                error = campoEsperado + " no puede ser vacío" + "\n";
+            }
+            return error;
+        }
+        public static string ValidarComboBox(int num, string campoEsperado)
+        {
+            string error = "";
+            if (num == -1)
+            {
+                error = "Seleccione un " + campoEsperado + "\n";
+            }
+            return error;
+        }
+        public static string ValidarFecha(DateTime input, string campoEsperado)
+        {
+            string error = "";
+            if (input <= DateTime.Today)
+            {
+                error = campoEsperado + " la fecha debe ser posterior al día de hoy" + "\n";
+            }
+            return error;
         }
     }
 }

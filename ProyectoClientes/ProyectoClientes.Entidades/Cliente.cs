@@ -12,7 +12,7 @@ namespace ProyectoClientes.Entidades
         //Id (int) , Cuit (long),
         //Email, FechaNacimiento (datetime), Activo (bool),
         //campos string: Nombre, Apellido, Direccion, Telefono.
-        private long _cuit;
+        private long _dni;
         private int _id;
         private string _email;
         private DateTime _fechaNacimiento;
@@ -22,7 +22,7 @@ namespace ProyectoClientes.Entidades
 
         //Propiedades
         public int Id => _id;
-        public long Cuit => _cuit;
+        public long Dni => _dni;
         public string Email => _email;
         public DateTime FechaNac => _fechaNacimiento;
         public bool Activo => _activo;
@@ -30,17 +30,17 @@ namespace ProyectoClientes.Entidades
         public string Telefono => _telefono;
 
         //Constructores
-        public Cliente(int id, long cuit, string nombre, string apellido, string direccion, string telefono) : base(nombre, apellido)
+        public Cliente(int id, long dni, string nombre, string apellido, string direccion, string telefono) : base(nombre, apellido)
         {
             _id = id;
-            _cuit = cuit;
+            _dni = dni;
             _direccion = direccion;
             _telefono = telefono;
         }
-        public Cliente(int id, long cuit, string nombre, string apellido, string direccion, string telefono, DateTime fechaNac, bool activo, string email) : base(nombre, apellido)
+        public Cliente(int id, long dni, string nombre, string apellido, string direccion, string telefono, DateTime fechaNac, bool activo, string email) : base(nombre, apellido)
         {
             _id = id;
-            _cuit = cuit;
+            _dni = dni;
             _direccion = direccion;
             _telefono = telefono;
             _fechaNacimiento = fechaNac;
