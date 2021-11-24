@@ -17,8 +17,6 @@ namespace ProyectoClientes.AccesoDatos
         public ClienteMapper()
         {
             _clientes = new List<Cliente>();
-            _clientes.Add(new Cliente(1, 23337468552, "Carlos", "Perez", "Av.Callao 3333", "01139451829"));
-            _clientes.Add(new Cliente(2, 24447468552, "Sandra", "Martinez", "Av.Callao 3333", "01133492782"));
         }
 
         public List<Cliente> TraerClientes()
@@ -26,14 +24,17 @@ namespace ProyectoClientes.AccesoDatos
             return _clientes;
         }
 
-        public void Agregar (Cliente cliente)
+
+        //Metodo para agregar!
+        public TransactionResult Ingresar (Cliente cliente)
         {
             NameValueCollection obj = ReverseMap(cliente);
             string json = WebHelper.Post("cliente", obj);
             TransactionResult lst = JsonConvert.DeserializeObject<TransactionResult>(json);
             _clientes.Add(cliente);
+            return lst;
         }
-
+        
         private NameValueCollection ReverseMap(Cliente cliente)
         {
             NameValueCollection cl = new NameValueCollection();
@@ -46,6 +47,16 @@ namespace ProyectoClientes.AccesoDatos
             cl.Add("fechaNacimiento", cliente.FechaNac.ToString());
             cl.Add("activo", cliente.Activo.ToString());
             return cl;
+        }
+
+        public TransactionResult Actualizar(Cliente cliente)
+        {
+            NameValueCollection obj = ReverseMap(cliente);
+            string json = WebHelper.Put("cliente", obj);
+            TransactionResult lst = JsonConvert.DeserializeObject<TransactionResult>(json);
+            _clientes.Add(cliente);
+            return lst;
+
         }
     }
 }

@@ -13,11 +13,13 @@ namespace ProyectoClientes.Entidades
         protected TipoDocumento _tipoDocumento;
 
         //Propiedades
-        public string Nombre { get => _nombre; }
-        public string Apellido { get => _apellido; }
+        public string Nombre { get => _nombre; set => _nombre = value; }
+        public string Apellido { get => _apellido; set => _apellido = value; }
         public TipoDocumento TipoDocumento { get => _tipoDocumento; }
 
         //Constructores
+        public Persona()
+        { }
         public Persona (string nombre, string apellido, TipoDocumento tipoDoc)
         {
             _nombre = nombre;

@@ -131,7 +131,7 @@ namespace ProyectoClientes.WinForms
             this._btnVolver.TabIndex = 8;
             this._btnVolver.Text = "Volver";
             this._btnVolver.UseVisualStyleBackColor = true;
-            this._btnVolver.Click += new System.EventHandler(this._btnVolver_Click);
+            this._btnVolver.Click += new System.EventHandler(this._btnVolverBoton_Click);
             // 
             // lblFechaNac
             // 
@@ -258,6 +258,7 @@ namespace ProyectoClientes.WinForms
             this._btnRecargar.TabIndex = 24;
             this._btnRecargar.Text = "Recargar";
             this._btnRecargar.UseVisualStyleBackColor = true;
+            this._btnRecargar.Click += new System.EventHandler(this._btnRecargar_Click);
             // 
             // FrmCliente
             // 
