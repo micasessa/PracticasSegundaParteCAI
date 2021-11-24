@@ -22,8 +22,11 @@ namespace ProyectoClientes.Negocio
         //metodos
         public List<Cliente> GetClientes()
         {
-            return _clienteMapper.TraerClientes();
+            _listaclientes = _clienteMapper.TraerTodos();
+            return _listaclientes;
         }
+
+
         public TransactionResult AddCliente (string nombre, string apellido, DateTime fechaNac, long dni, string tel, string dir, bool act, string email = "micasessa@yahoo.com")
         {
             Cliente cliente = new Cliente();

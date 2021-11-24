@@ -13,19 +13,21 @@ namespace ProyectoClientes.AccesoDatos
     {
         private List<Cliente> _clientes;
 
-        //constructor
-        public ClienteMapper()
+        //Metodos para LISTAR
+        public List<Cliente> TraerTodos()
         {
-            _clientes = new List<Cliente>();
+            string json2 = WebHelper.Get("cliente"); // trae un texto en formato json de una web
+            List<Cliente> resultado = MapList(json2);
+            _clientes = resultado;
+            return resultado;
+        }
+        private List<Cliente> MapList(string json)
+        {
+            List<Cliente> lst = JsonConvert.DeserializeObject<List<Cliente>>(json); // deserializacion
+            return lst;
         }
 
-        public List<Cliente> TraerClientes()
-        {
-            return _clientes;
-        }
-
-
-        //Metodo para agregar!
+        //Metodo para AGREGAR!
         public TransactionResult Ingresar (Cliente cliente)
         {
             NameValueCollection obj = ReverseMap(cliente);

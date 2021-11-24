@@ -122,7 +122,14 @@ namespace ProyectoClientes.WinForms
 
         private void FrmCliente_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                Recargar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void _btnVolverBoton_Click(object sender, EventArgs e)
@@ -144,7 +151,9 @@ namespace ProyectoClientes.WinForms
 
         private void Recargar()
         {
-            _clientes = _clienteNegocio.TraerClientes();
+            _clientes = _clienteNegocio.GetClientes();
+            _lstClientes.DataSource = null;
+            _lstClientes.DataSource = _clientes;
         }
     }
 }
