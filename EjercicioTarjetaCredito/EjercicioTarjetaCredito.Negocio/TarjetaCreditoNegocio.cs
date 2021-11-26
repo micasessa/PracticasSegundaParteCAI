@@ -55,6 +55,9 @@ namespace EjercicioTarjetaCredito.Negocio
         //Necesito: idcliente, tipotarjeta, periodo
         public string CalculoPlastico(Cliente cliente, TipoTarjetaEnum tipoTarj, PeriodoEnum periodo)
         {
+            Random random = new Random();
+            int ultimos3dígitos = random.Next(100, 999);
+
             string plasticoBase = "43180002020" + DateTime.Now.ToString(); //Invento de numeros
             string resultado = plasticoBase + ((int)tipoTarj).ToString() + ((int)periodo) + cliente.id.ToString();
             if (tipoTarj == TipoTarjetaEnum.Amex)

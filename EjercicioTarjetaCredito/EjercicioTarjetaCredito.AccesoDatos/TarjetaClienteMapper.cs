@@ -17,7 +17,7 @@ namespace EjercicioTarjetaCredito.AccesoDatos
 
         public List<TarjetaCredito> TraerTarjetas()
         {
-            string json2 = WebHelper.Get("tarjetacredito/{registro}");
+            string json2 = WebHelper.Get("tarjetacredito/" + 890266);
             _tarjetasCredito = MapList(json2);
             return _tarjetasCredito;
         }
@@ -44,7 +44,7 @@ namespace EjercicioTarjetaCredito.AccesoDatos
             t.Add("periodoVencimiento", tarjeta.PeriodoVencimiento.ToString() );
             t.Add("limiteCompra", tarjeta.LimiteCompra.ToString("0.00"));
             t.Add("nroPlastico", tarjeta.NroPlastico);
-            t.Add("usuario", tarjeta.Usuario);
+            t.Add("usuario", "890266");
             t.Add("idCliente", tarjeta.IdCliente.ToString());
             return t;
         }

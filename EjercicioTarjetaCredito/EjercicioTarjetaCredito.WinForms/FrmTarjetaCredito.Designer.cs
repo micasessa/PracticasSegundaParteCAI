@@ -134,6 +134,7 @@ namespace EjercicioTarjetaCredito.WinForms
             // 
             // _cmbTipoTarjeta
             // 
+            this._cmbTipoTarjeta.Enabled = false;
             this._cmbTipoTarjeta.FormattingEnabled = true;
             this._cmbTipoTarjeta.Location = new System.Drawing.Point(194, 47);
             this._cmbTipoTarjeta.Name = "_cmbTipoTarjeta";

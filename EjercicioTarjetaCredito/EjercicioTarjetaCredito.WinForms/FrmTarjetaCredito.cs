@@ -40,8 +40,31 @@ namespace EjercicioTarjetaCredito.WinForms
         {
             try
             {
+                ValidacionesGenerales();
+                //declaro a los atrib del "DropDown"
+                TipoTarjetaEnum tipoTarj = (TipoTarjetaEnum)_cmbTipoTarjeta.SelectedItem;
+                PeriodoEnum periodoEnum = (PeriodoEnum)_cmbPeriodoCierre.SelectedItem;
+                Cliente cliente = (Cliente)_cmbCliente.SelectedItem;
 
-            } catch(Exception ex)
+                if (cliente != null) //Si el cliente está seleccionado
+                {   //asigno al numero de tarjeta los atributos seleccionados por el usuario
+                    //1.declaro el string
+                    string nroTarj = _servicioTarjeta.CalculoPlastico(cliente, tipoTarj, periodoEnum);
+
+                    //2.matcheo string con el texto del form
+                    _txtNumPlastico.Text = nroTarj;
+                }
+
+            } catch(ClientesSinCuentaException ex)
+            {
+                MessageBox.Show("Cliente sin cuenta");
+            }
+            catch (ClientesSinLimiteException ex)
+            {
+                MessageBox.Show("Cliente sin limite disponible");
+            }
+
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -51,6 +74,18 @@ namespace EjercicioTarjetaCredito.WinForms
         {
             try
             {
+                ValidacionesGenerales();
+                Validador.ValidacionInt(_txtNumPlastico); // dígitos del plástico depende del tipo tarjeta
+                TipoTarjetaEnum tipoTarj = (TipoTarjetaEnum)_cmbTipoTarjeta.SelectedItem;
+                PeriodoEnum periodoEnum = (PeriodoEnum)_cmbPeriodoCierre.SelectedItem;
+                Cliente cliente = (Cliente)_cmbCliente.SelectedItem;
+                string tarjeta = _txtNumPlastico.Text;
+                double limite = Convert.ToDouble(_txtBxLimiteCompra.Text);
+                _servicioTarjeta.Alta(tipoTarj, periodoEnum, cliente, tarjeta, limite);
+
+                Carga();
+                Limpiar();
+                Recargar();
 
             }
             catch (Exception ex)
@@ -104,9 +139,37 @@ namespace EjercicioTarjetaCredito.WinForms
             _lstTarjetas.DataSource = _listaTarjetas;
         }
 
-        private void ValidacionesCalculos()
-        {
+
+        private void ValidacionesGenerales()
+        {            
+            //declaro a los atrib para validar "DropDown"
+            TipoTarjetaEnum tipoTarj = (TipoTarjetaEnum)_cmbTipoTarjeta.SelectedItem;
+            PeriodoEnum periodoEnum = (PeriodoEnum)_cmbPeriodoCierre.SelectedItem;
+            Cliente cliente = (Cliente)_cmbCliente.SelectedItem;
+
+            //1ero valido que el usuario haya seleccionado alguna de las opciones mostradas
+            if ((int)tipoTarj == 0)
+            {
+                throw new Exception("Seleccione una opcion");
+            }
+            if ((int)periodoEnum == 0)
+            {
+                throw new Exception("Seleccione una opcion");
+            }
+            if (cliente == null || cliente.id == 0)
+            {
+                throw new Exception("Seleccione una opcion");
+            }
+
+            Validador.ValidacionInt(_txtBxLimiteCompra);
+            int limiteElegido = Convert.ToInt32(_txtBxLimiteCompra.Text);
+            int limiteMax = 50000;
+            if(limiteElegido > limiteMax)
+                throw new Exception("El limite maximo es 50000");
+        
 
         }
+
+        
     }
 }
