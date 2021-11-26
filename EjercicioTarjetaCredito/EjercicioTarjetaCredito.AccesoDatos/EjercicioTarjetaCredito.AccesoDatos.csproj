@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteMapper.cs" />
+    <Compile Include="CuentaMapper.cs" />
     <Compile Include="TarjetaClienteMapper.cs" />
     <Compile Include="WebHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

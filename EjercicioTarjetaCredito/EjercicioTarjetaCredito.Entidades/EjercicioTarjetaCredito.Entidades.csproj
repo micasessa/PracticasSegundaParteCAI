@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cliente.cs" />
+    <Compile Include="Cuenta.cs" />
     <Compile Include="Enum\PeriodoEnum.cs" />
     <Compile Include="Enum\TipoTarjetaEnum.cs" />
     <Compile Include="Excepciones\ClientesSinCuentaException.cs" />

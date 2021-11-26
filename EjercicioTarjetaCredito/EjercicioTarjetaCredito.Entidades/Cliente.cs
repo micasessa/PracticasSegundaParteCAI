@@ -19,9 +19,9 @@ namespace EjercicioTarjetaCredito.Entidades
         private DateTime _fechaNac;
         private string _telefono;
         private bool _activo;
-
+        private Cuenta _cuenta;
         
-        public string Ape { get => _apellido; set => _apellido = value; }
+        public string Apellido { get => _apellido; set => _apellido = value; }
 
        
         public long DNI { get => _DNI; set => _DNI = value; }
@@ -46,6 +46,9 @@ namespace EjercicioTarjetaCredito.Entidades
                 return $"{this._apellido}, {this._nombre}";
             }
         }
+
+        public Cuenta Cuenta { get => _cuenta; set => _cuenta = value; }
+
         public Cliente()
         {
 

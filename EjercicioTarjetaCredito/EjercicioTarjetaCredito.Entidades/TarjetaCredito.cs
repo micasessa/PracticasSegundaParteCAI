@@ -15,7 +15,7 @@ namespace EjercicioTarjetaCredito.Entidades
         private double _limiteCompra;
         private string _nroPlastico;
         private string _usuario;
-        private string _idCliente;
+        private int _idCliente;
         private Cliente _cliente;
 
         //Propiedades
@@ -25,14 +25,14 @@ namespace EjercicioTarjetaCredito.Entidades
         public double LimiteCompra { get => _limiteCompra; set => _limiteCompra = value; }
         public string NroPlastico { get => _nroPlastico; set => _nroPlastico = value; }
         public string Usuario { get => _usuario; set => _usuario = value; }
-        public string IdCliente { get => _idCliente; set => _idCliente = value; }
+        public int IdCliente { get => _idCliente; set => _idCliente = value; }
         public Cliente Cliente { get => _cliente; set => _cliente = value; }
 
         //Constructores
         public TarjetaCredito()
-        { 
+        {
         }
-        public TarjetaCredito(int id, int tipo, int periodoVencimiento, double limiteCompra, string nroPlastico, string usuario, string idCliente, Cliente cliente)
+        public TarjetaCredito(int id, int tipo, int periodoVencimiento, double limiteCompra, string nroPlastico, string usuario, int idCliente, Cliente cliente)
         {
             _id = id;
             _tipo = tipo;
@@ -43,6 +43,14 @@ namespace EjercicioTarjetaCredito.Entidades
             _idCliente = idCliente;
             _cliente = cliente;
 
+        }
+        public TarjetaCredito( int tipo, int periodoVencimiento, double limiteCompra, string nroPlastico, int idCliente)
+        {
+            _tipo = tipo;
+            _periodoVencimiento = periodoVencimiento;
+            _limiteCompra = limiteCompra;
+            _nroPlastico = nroPlastico;
+            _idCliente = idCliente;
         }
     }
 }

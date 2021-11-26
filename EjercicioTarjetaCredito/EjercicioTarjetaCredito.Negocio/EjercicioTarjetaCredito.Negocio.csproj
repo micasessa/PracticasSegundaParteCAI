@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ClienteNegocio.cs" />
+    <Compile Include="CuentaNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TarjetaCreditoNegocio.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EjercicioTarjetaCredito.AccesoDatos\EjercicioTarjetaCredito.AccesoDatos.csproj">
